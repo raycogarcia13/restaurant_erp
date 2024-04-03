@@ -1,0 +1,213 @@
+<%- include('./template/header'); %>
+
+<!-- start banner Area -->
+<section class="banner-area">		
+    <div class="container">
+        <div class="row fullscreen align-items-center justify-content-between">
+            <div class="col-lg-12 banner-content">
+                <h6 class="text-white">La mejor opción</h6>
+                <h1 class="text-white">Restaurante La Cubana</h1>
+                <p class="text-white">
+                    Un ambiente agradable con comida tradicional cubana y la mejor tradicional de Nicaragua. Donde no existe la distancia entre estas culturas
+                </p>
+                <a href="/menu" class="primary-btn text-uppercase">Ver Menú del día</a>
+            </div>
+        </div>
+    </div>					
+</section>
+<!-- End banner Area -->
+
+<!-- Start home-about Area -->
+<section id="about" class="home-about-area section-gap">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-6 home-about-left">
+                <h1>¿Quiénes somos?</h1>
+                <p>
+                    La Cubana! Restaurante de comida cubana con el autentico sabor de Cuba en el corazón de Managua. Si eres amante de la comida y disfrutas de probar auténticos sabores y descubrir la cultura de un lugar a través de su gastronomía, no puedes dejar de visitar La Cuba en donde disfrutaras de los platos tradicionales con el autentico sazón cubano!
+                </p>
+            </div>
+            <div class="col-lg-6 home-about-right">
+                <img class="img-fluid" src="/public/img/about-img.jpg" alt="">
+            </div>
+        </div>
+    </div>	
+</section>
+<!-- End home-about Area -->			
+
+<%- include('./template/menu'); %>
+
+<!-- Start reservation Area -->
+<section id="reservation" class="reservation-area section-gap relative">
+    <div class="overlay overlay-bg"></div>
+    <div class="container">
+        <div class="row justify-content-between align-items-center">
+            <div class="col-lg-6 reservation-left">
+                <h1 class="text-white">Realiza una reserva para ti y tu familia</h1>
+                <p class="text-white pt-20">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam. Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea.
+                </p>
+            </div>
+            <div class="col-lg-5 reservation-right">
+                <form class="form-wrap text-center" action="#">
+                    <input type="text" class="form-control" name="name" placeholder="Tu Nombre" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Tu Nombre'" >
+                    <input type="email" class="form-control" name="email" placeholder="Tu dirección Email" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Tu dirección Email'" >
+                    <input type="text" class="form-control" name="phone" placeholder="Número de teléfono" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Número de teléfono'" >		
+                    <input type="text" class="form-control date-picker" name="date" placeholder="Seleccione fecha y hora" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Seleccione Fecha y Hora'" >									
+                    <div class="form-select" id="service-select">
+                        <select>
+                            <option data-display="">Escoja el evento</option>
+                            <option value="1">Event One</option>
+                            <option value="2">Event Two</option>
+                            <option value="3">Event Three</option>
+                            <option value="4">Event Four</option>
+                        </select>
+                    </div>									
+                    <button class="primary-btn text-uppercase mt-20">Pedir reserva</button>
+                </form>
+            </div>
+        </div>
+    </div>	
+</section>
+<!-- End reservation Area -->
+
+<!-- Start gallery-area Area -->
+<section class="menu-area section-gap" id="gallery">
+    <div class="container">
+        <div class="row d-flex justify-content-center">
+            <div class="menu-content pb-70 col-lg-8">
+                <div class="title text-center">
+                    <h1 class="mb-10">Nuestros platos</h1>
+                    <p>Una gastronomía tradicional variada fruto de la cultura de ambos paises.</p>
+                </div>
+            </div>
+        </div>	
+        
+
+        <ul class="filter-wrap filters col-lg-12 no-padding">
+            <li class="active" data-filter="*">Todas las categorías</li>
+                <% categories.forEach( (item) => { %>
+                    <li data-filter=".<%= item._id %>"><%=item.name%></li>
+               <% }); %>
+        </ul>
+        
+        
+        <div class="filters-content">
+            <div class="row grid">
+                <% products.forEach( (item) => {  %>
+                    <div class="col-lg-4 col-md-6 col-sm-6 all <%=item.category_id%>">
+                        <div class="single-gallery">
+                            <img class="img-fluid" src="<%=item.picture%>" alt="">
+                        </div>                            
+                    </div>
+                <%}); %>
+            </div>
+        </div>
+        
+        
+    </div>
+</section>
+<!-- End gallery-area Area -->			
+
+<!-- Start review Area -->
+<section class="review-area section-gap">
+    <div class="container">
+        <div class="row">
+            <div class="active-review-carusel">
+                <div class="single-review">
+                    <h4>Hulda Sutton</h4>
+                    <div class="star">
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star"></span>								
+                    </div>	
+                    <p>
+                        “Exquisita comida, muy buena la atención”
+                    </p>
+                </div>
+                <div class="single-review">
+                    <h4>PPP AAAA</h4>
+                    <div class="star">
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>								
+                    </div>	
+                    <p>
+                        “Magnífico Lugar, super recomnendado”
+                    </p>
+                </div>														
+            </div>
+        </div>
+    </div>	
+</section>
+<!-- End review Area -->					
+
+		<!-- Start contact-page Area -->
+        <section id="contact" class="contact-page-area section-gap">
+            <div class="container">
+                <div class="row">
+                    <div class="map-wrap" style="width:100%; height: 445px;">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3900.9188459299157!2d-86.25497452422229!3d12.117705088124712!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8f73ff712ca85781%3A0x277ca954dcf33506!2sLa%20Cubana!5e0!3m2!1ses-419!2sus!4v1711397101388!5m2!1ses-419!2sus" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                    <div class="col-lg-4 d-flex flex-column address-wrap">
+                        <div class="single-contact-address d-flex flex-row">
+                            <div class="icon">
+                                <span class="lnr lnr-home"></span>
+                            </div>
+                            <div class="contact-details">
+                                <h5>Managua, Nicaragua</h5>
+                                <p>
+                                    Calle Toledo. Semáforos de Lozelsa 2 Cuadras al lago y 20 Varas abajo , 
+                                </p>
+                            </div>
+                        </div>
+                        <div class="single-contact-address d-flex flex-row">
+                            <div class="icon">
+                                <span class="lnr lnr-phone-handset"></span>
+                            </div>
+                            <div class="contact-details">
+                                <h5>+505 8648 3488</h5>
+                                <p>A partir de las 10:00AM</p>
+                            </div>
+                        </div>
+                        <div class="single-contact-address d-flex flex-row">
+                            <div class="icon">
+                                <span class="lnr lnr-envelope"></span>
+                            </div>
+                            <div class="contact-details">
+                                <h5>lacubanaaltamira@gmail.com</h5>
+                                <p>Contáctanos cunando desee</p>
+                            </div>
+                        </div>														
+                    </div>
+                    <div class="col-lg-8">
+                        <form class="form-area contact-form text-right" id="myForm" action="#" method="post">
+                            <div class="row">	
+                                <div class="col-lg-6 form-group">
+                                    <input name="name" placeholder="Inserte su nombre" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter your name'" class="common-input mb-20 form-control" required="" type="text">
+                                
+                                    <input name="email" placeholder="Inserte su dirección de correo" pattern="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{1,63}$" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter email address'" class="common-input mb-20 form-control" required="" type="email">
+
+                                    <input name="subject" placeholder="Asunto" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter subject'" class="common-input mb-20 form-control" required="" type="text">
+                                </div>
+                                <div class="col-lg-6 form-group">
+                                    <textarea class="common-textarea form-control" name="message" placeholder="Mensaje" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter Messege'" required=""></textarea>				
+                                </div>
+                                <div class="col-lg-12">
+                                    <div class="alert-msg" style="text-align: left;"></div>
+                                    <button class="genric-btn primary" style="float: right;">Enviar Mensaje</button>											
+                                </div>
+                            </div>
+                        </form>	
+                    </div>
+                </div>
+            </div>	
+        </section>
+        <!-- End contact-page Area -->
+
+
+<%- include('./template/footer'); %>

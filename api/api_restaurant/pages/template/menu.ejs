@@ -1,0 +1,44 @@
+			<!-- Start menu-area Area -->
+            <section class="menu-area section-gap" id="menu">
+                <div class="container">
+					<div class="row d-flex justify-content-center">
+						<div class="menu-content pb-70 col-lg-8">
+							<div class="title text-center">
+								<h1 class="mb-10">MENÚ DEL DÍA</h1>
+								<p>Somos extremadamente cuidadosos con el medio ambiente y EcoFriendly.</p>
+							</div>
+						</div>
+					</div>	
+
+                    <ul class="filter-wrap filters col-lg-12 no-padding">
+                        <li class="active" data-filter="*">Todas las categorías</li>
+                        <% categories.forEach( (item) => { %>
+                            <li data-filter=".<%= item._id %>"><%=item.name%></li>
+                          <% }); %>
+                    </ul>
+                    
+                    
+                    <div class="filters-content">
+                        <div class="row grid">
+                            <% menu.forEach( (item) => {  %>
+                                <div class="col-md-6 all <%=item.category_id%>">
+                                    <div class="single-menu">
+                                        <img src="<%=item.picture%>">
+                                        <div class="textos">
+                                            <div class="title-wrap d-flex justify-content-between">
+                                                <h4><%=item.name%></h4>
+                                            </div>			
+                                            <h4 class="price">$<%=item.price%></h4>
+                                            <p><%=item.description%></p>									
+                                        </div>
+                                    </div>					                               
+                                </div>      
+                                
+                            <% }); %>
+                        </div>
+                    </div>
+                    
+                    
+                </div>
+            </section>
+            <!-- End menu-area Area -->		
